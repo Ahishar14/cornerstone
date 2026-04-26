@@ -20,7 +20,7 @@ require('./db');
 // const app  = express();
 const PORT = process.env.PORT || 5000;
 
-const path = require('path'); // Add this at the very top with other requires
+//(because it is already on line 12) const path = require('path'); // Add this at the very top with other requires
 
 // ... existing middleware like app.use(cors()) ...
 
