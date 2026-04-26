@@ -134,7 +134,7 @@ if (contactForm) {
     setSubmitState(btn, true, orig);
 
     try {
-      const res = await fetch('http://localhost:5000/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(Object.fromEntries(new FormData(contactForm))),
@@ -165,7 +165,7 @@ if (contactForm) {
 //     setSubmitState(btn, true, orig);
 
 //     try {
-//       const res = await fetch('http://localhost:5000/api/admissions', {
+//       const res = await fetch('/api/admissions', {
 //         method: 'POST',
 //         headers: { 'Content-Type': 'application/json' },
 //         body: JSON.stringify(Object.fromEntries(new FormData(admissionsForm))),
@@ -206,7 +206,7 @@ if (admissionsForm) {
 
       // 3. Prepare data and send to Port 5000
       const formData = Object.fromEntries(new FormData(admissionsForm));
-      const res = await fetch('http://localhost:5000/api/admissions', {
+      const res = await fetch('/api/admissions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -250,7 +250,7 @@ if (donateForm) {
 
     try {
       const res = await fetch('https://spotty-camels-happen.loca.lt/api/donate', {
-      // const res = await fetch('http://localhost:5000/api/donate', {
+      // const res = await fetch('/api/donate', {
         method: 'POST',
         // headers: { 'Content-Type': 'application/json' },
         headers: {

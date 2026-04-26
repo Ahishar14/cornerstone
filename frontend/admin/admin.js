@@ -4,9 +4,9 @@
 'use strict';
 
 // const API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-//   ? 'http://localhost:5000/api/admin'
+//   ? '/api/admin'
 //   : '/api/admin';
-  const API = 'http://localhost:5000/api/admin';
+  const API = '/api/admin';
 
 // const API = '/api/admin';
 let authToken  = null;
@@ -25,8 +25,8 @@ const loginError   = document.getElementById('login-error');
 
 async function tryLogin(email, password) {
   try {
-    // const res  = await fetch('/api/admin/login'
-    const res = await fetch('http://localhost:5000/api/admin/login', {
+    const res  = await fetch('/api/admin/login', {
+    // const res = await fetch('/api/admin/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
@@ -131,7 +131,7 @@ document.getElementById('sidebar-toggle').addEventListener('click', () => {
   API HELPER
    ================================================================ */
 async function apiFetch(path, opts = {}) {
-  const res = await fetch(`http://localhost:5000/api/admin${path}`, {
+  const res = await fetch(`/api/admin${path}`, {
     ...opts,
     headers: {
       'Content-Type': 'application/json',
@@ -567,7 +567,7 @@ if (passwordForm) {
 
     try {
       // Using the apiFetch helper we updated earlier
-      const res = await fetch('http://localhost:5000/api/admin/update-password', {
+      const res = await fetch('/api/admin/update-password', {
         method: 'PATCH',
         headers: { 
           'Content-Type': 'application/json',
