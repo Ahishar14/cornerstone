@@ -13,7 +13,7 @@ const logger     = require('../middleware/logger');
 const router = express.Router();
 
 /* ================================================================
-   JWT MIDDLEWARE
+  JWT MIDDLEWARE
    ================================================================ */
 function requireAuth(req, res, next) {
   const header = req.headers.authorization;
@@ -29,7 +29,7 @@ function requireAuth(req, res, next) {
 }
 
 /* ================================================================
-   ADMIN USERS TABLE  (created here if absent)
+  ADMIN USERS TABLE  (created here if absent)
    ================================================================ */
 db.exec(`
   CREATE TABLE IF NOT EXISTS admin_users (
@@ -51,8 +51,8 @@ db.exec(`
 `);
 
 /* ── Seed default admin if table is empty ─────────────────────
-   Default: admin@cornerstoneschools.ug / ChangeMe123!
-   Change the password immediately after first login.
+  Default: admin@cornerstoneschools.ug / ChangeMe123!
+  Change the password immediately after first login.
    ─────────────────────────────────────────────────────────── */
 (async () => {
   const existing = db.prepare('SELECT id FROM admin_users LIMIT 1').get();
@@ -66,7 +66,7 @@ db.exec(`
 })();
 
 /* ================================================================
-   LOGIN
+  LOGIN
    ================================================================ */
 router.post(
   '/login',
@@ -108,76 +108,133 @@ router.post(
 router.use(requireAuth);
 
 /* ================================================================
-   DASHBOARD STATS
+  DASHBOARD STATS
    ================================================================ */
-router.get('/stats', (req, res) => {
-  const newAdmissions    = db.prepare(`SELECT COUNT(*) AS c FROM admissions_enquiries WHERE status = 'new'`).get().c;
-  const totalContacts    = db.prepare(`SELECT COUNT(*) AS c FROM contact_submissions`).get().c;
-  const completedDon     = db.prepare(`SELECT COUNT(*) AS c FROM donations WHERE status = 'completed'`).get().c;
-  const donTotalUGX      = db.prepare(`SELECT COALESCE(SUM(amount),0) AS t FROM donations WHERE status='completed' AND currency='UGX'`).get().t;
-  const recentAdmissions = db.prepare(`SELECT * FROM admissions_enquiries ORDER BY created_at DESC LIMIT 5`).all();
-  const recentDonations  = db.prepare(`SELECT * FROM donations ORDER BY created_at DESC LIMIT 5`).all();
+// router.get('/stats', (req, res) => {
+//   const newAdmissions    = db.prepare(`SELECT COUNT(*) AS c FROM admissions_enquiries WHERE status = 'new'`).get().c;
+//   const totalContacts    = db.prepare(`SELECT COUNT(*) AS c FROM contact_submissions`).get().c;
+//   const completedDon     = db.prepare(`SELECT COUNT(*) AS c FROM donations WHERE status = 'completed'`).get().c;
+//   const donTotalUGX      = db.prepare(`SELECT COALESCE(SUM(amount),0) AS t FROM donations WHERE status='completed' AND currency='UGX'`).get().t;
+//   const recentAdmissions = db.prepare(`SELECT * FROM admissions_enquiries ORDER BY created_at DESC LIMIT 5`).all();
+//   const recentDonations  = db.prepare(`SELECT * FROM donations ORDER BY created_at DESC LIMIT 5`).all();
 
-  res.json({
-    new_admissions:      newAdmissions,
-    total_contacts:      totalContacts,
-    completed_donations: completedDon,
-    donation_total_ugx:  donTotalUGX,
-    recent_admissions:   recentAdmissions,
-    recent_donations:    recentDonations,
-  });
-});
+//   res.json({
+//     new_admissions:      newAdmissions,
+//     total_contacts:      totalContacts,
+//     completed_donations: completedDon,
+//     donation_total_ugx:  donTotalUGX,
+//     recent_admissions:   recentAdmissions,
+//     recent_donations:    recentDonations,
+//   });
+// });
+// backend/routes/admin.js
 
-/* ================================================================
-   ADMISSIONS
-   ================================================================ */
-router.get('/admissions', (req, res) => {
-  const { page = 1, limit = 20, search = '', status = '' } = req.query;
-  const offset  = (parseInt(page) - 1) * parseInt(limit);
-  const like    = `%${search}%`;
-  const statusQ = status ? `AND status = ?` : '';
-  const params  = status
-    ? [like, like, like, status, parseInt(limit), offset]
-    : [like, like, like, parseInt(limit), offset];
+router.get('/stats', requireAuth, (req, res) => {
+  try {
+    // 1. Gather the counts for the top dashboard cards
+    const new_admissions = db.prepare('SELECT COUNT(*) as c FROM admissions_enquiries').get().c;
+    const total_contacts = db.prepare('SELECT COUNT(*) as c FROM contact_submissions').get().c;
+    const completed_donations = db.prepare("SELECT COUNT(*) as c FROM donations WHERE status = 'completed'").get().c;
+    const donation_total_ugx = db.prepare("SELECT SUM(amount) as s FROM donations WHERE status = 'completed'").get().s || 0;
 
-  const rows = db.prepare(`
-    SELECT * FROM admissions_enquiries
-    WHERE (child_first_name LIKE ? OR child_last_name LIKE ? OR email LIKE ?) ${statusQ}
-    ORDER BY created_at DESC LIMIT ? OFFSET ?
-  `).all(...params);
+    // 2. Gather the actual rows for the "Recent Activity" tables
+    const recent_admissions = db.prepare('SELECT * FROM admissions_enquiries ORDER BY created_at DESC LIMIT 5').all();
+    const recent_donations = db.prepare('SELECT * FROM donations ORDER BY created_at DESC LIMIT 5').all();
 
-  const totalParams = status ? [like, like, like, status] : [like, like, like];
-  const total = db.prepare(`
-    SELECT COUNT(*) AS c FROM admissions_enquiries
-    WHERE (child_first_name LIKE ? OR child_last_name LIKE ? OR email LIKE ?) ${statusQ}
-  `).get(...totalParams).c;
-
-  res.json({ rows, total });
-});
-
-router.get('/admissions/:id', (req, res) => {
-  const row = db.prepare('SELECT * FROM admissions_enquiries WHERE id = ?').get(req.params.id);
-  if (!row) return res.status(404).json({ success: false, message: 'Not found.' });
-  res.json(row);
-});
-
-router.patch('/admissions/:id/status',
-  [body('status').isIn(['new','reviewed','accepted','waitlisted','declined'])],
-  (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) return res.status(422).json({ success: false, message: 'Invalid status.' });
-
-    const result = db.prepare('UPDATE admissions_enquiries SET status = ? WHERE id = ?')
-      .run(req.body.status, req.params.id);
-
-    if (result.changes === 0) return res.status(404).json({ success: false, message: 'Record not found.' });
-    logger.info('Admission %s status → %s by %s', req.params.id, req.body.status, req.admin.email);
-    res.json({ success: true });
+    // 3. Send everything in the exact format frontend/js/admin.js expects
+    res.json({
+      new_admissions,
+      total_contacts,
+      completed_donations,
+      donation_total_ugx,
+      recent_admissions,
+      recent_donations
+    });
+  } catch (err) {
+    logger.error('Stats fetch error: %s', err.message);
+    res.status(500).json({ success: false, message: 'Failed to load dashboard stats' });
   }
-);
+});
 
 /* ================================================================
-   CONTACTS
+  ADMISSIONS
+   ================================================================ */
+// router.get('/admissions', (req, res) => {
+//   const { page = 1, limit = 20, search = '', status = '' } = req.query;
+//   const offset  = (parseInt(page) - 1) * parseInt(limit);
+//   const like    = `%${search}%`;
+//   const statusQ = status ? `AND status = ?` : '';
+//   const params  = status
+//     ? [like, like, like, status, parseInt(limit), offset]
+//     : [like, like, like, parseInt(limit), offset];
+
+//   const rows = db.prepare(`
+//     SELECT * FROM admissions_enquiries
+//     WHERE (child_first_name LIKE ? OR child_last_name LIKE ? OR email LIKE ?) ${statusQ}
+//     ORDER BY created_at DESC LIMIT ? OFFSET ?
+//   `).all(...params);
+
+//   const totalParams = status ? [like, like, like, status] : [like, like, like];
+//   const total = db.prepare(`
+//     SELECT COUNT(*) AS c FROM admissions_enquiries
+//     WHERE (child_first_name LIKE ? OR child_last_name LIKE ? OR email LIKE ?) ${statusQ}
+//   `).get(...totalParams).c;
+
+//   res.json({ rows, total });
+// });
+// router.get('/admissions/:id', (req, res) => {
+//   const row = db.prepare('SELECT * FROM admissions_enquiries WHERE id = ?').get(req.params.id);
+//   if (!row) return res.status(404).json({ success: false, message: 'Not found.' });
+//   res.json(row);
+// });
+// router.patch('/admissions/:id/status',
+//   [body('status').isIn(['new','reviewed','accepted','waitlisted','declined'])],
+//   (req, res) => {
+//     const errors = validationResult(req);
+//     if (!errors.isEmpty()) return res.status(422).json({ success: false, message: 'Invalid status.' });
+
+//     const result = db.prepare('UPDATE admissions_enquiries SET status = ? WHERE id = ?')
+//       .run(req.body.status, req.params.id);
+
+//     if (result.changes === 0) return res.status(404).json({ success: false, message: 'Record not found.' });
+//     logger.info('Admission %s status → %s by %s', req.params.id, req.body.status, req.admin.email);
+//     res.json({ success: true });
+//   }
+// );
+
+// backend/routes/admin.js
+
+router.get('/admissions', requireAuth, (req, res) => {
+  try {
+    // 1. Get pagination parameters from the frontend request
+    const limit  = parseInt(req.query.limit) || 20;
+    const offset = parseInt(req.query.offset) || 0;
+
+    // 2. Fetch the specific slice of data (rows)
+    const rows = db.prepare(`
+      SELECT * FROM admissions_enquiries 
+      ORDER BY created_at DESC 
+      LIMIT ? OFFSET ?
+    `).all(limit, offset);
+
+    // 3. Fetch the total count (needed for pagination buttons)
+    const total = db.prepare('SELECT COUNT(*) as count FROM admissions_enquiries').get().count;
+
+    // 4. Send the response in the EXACT format your frontend admin.js uses:
+    // It specifically looks for 'data.rows'
+    res.json({ 
+      rows: rows, 
+      total: total 
+    });
+
+  } catch (err) {
+    logger.error('Admin admissions fetch error: %s', err.message);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+});
+
+/* ================================================================
+  CONTACTS
    ================================================================ */
 router.get('/contacts', (req, res) => {
   const { page = 1, limit = 20, search = '' } = req.query;
