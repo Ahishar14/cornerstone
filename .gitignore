@@ -3,3 +3,10 @@ node_modules/
 .env.example
 *.db
 .DS_Store
+#database temporary files
+*.db-shm
+*db-wal
+
+#logs
+backend/logs
+*.log
