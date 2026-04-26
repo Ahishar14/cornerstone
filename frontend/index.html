@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cornerstone Nursery and Primary School — a premium learning institution in Kampala, Uganda, nurturing excellence in every child." />
+  <meta name="theme-color" content="#0D1F3C" />
+  <title>Cornerstone Schools | Nurturing Excellence in Every Child</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Security: CSP via HTTP headers (see backend). Referrer policy set in meta as fallback -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Cornerstone Schools — Home">
+        <div class="navbar__logo-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v5c0 5 4 9.5 9 10 5-0.5 9-5 9-10V7L12 2z" fill="white" opacity="0.9"/>
+            <path d="M9 12h6M12 9v6" stroke="#0D1F3C" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">Cornerstone Schools</span>
+          <span class="navbar__logo-tag">Kampala, Uganda</span>
+        </div>
+      </a>
+
+      <div class="navbar__nav" role="list">
+        <a href="index.html"       class="navbar__link" role="listitem">Home</a>
+        <a href="about.html"       class="navbar__link" role="listitem">About</a>
+        <a href="academics.html"   class="navbar__link" role="listitem">Academics</a>
+        <a href="admissions.html"  class="navbar__link" role="listitem">Admissions</a>
+        <a href="gallery.html"     class="navbar__link" role="listitem">Gallery</a>
+        <a href="contact.html"     class="navbar__link" role="listitem">Contact</a>
+      </div>
+
+      <a href="donate.html" class="navbar__cta">Donate</a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE MENU ═════════════════════════════════════════════════ -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html"      class="mobile-menu__link">Home</a>
+    <a href="about.html"      class="mobile-menu__link">About</a>
+    <a href="academics.html"  class="mobile-menu__link">Academics</a>
+    <a href="admissions.html" class="mobile-menu__link">Admissions</a>
+    <a href="gallery.html"    class="mobile-menu__link">Gallery</a>
+    <a href="contact.html"    class="mobile-menu__link">Contact</a>
+    <a href="donate.html"     class="mobile-menu__cta">Make a Donation</a>
+  </div>
+
+  <main>
+
+    <!-- ══ HERO ════════════════════════════════════════════════════════ -->
+    <section class="hero" aria-label="Welcome to Cornerstone Schools">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__content">
+          <p class="eyebrow hero__eyebrow">Established in Kampala, Uganda</p>
+          <h1 class="hero__title">
+            Nurturing<br><em>Excellence</em><br>in Every Child
+          </h1>
+          <p class="hero__subtitle">
+            A premier nursery and primary school where rigorous academics, inspired teaching, and cherished values combine to shape the leaders of tomorrow.
+          </p>
+          <div class="hero__actions">
+            <a href="admissions.html" class="btn btn-primary">Apply for Admission</a>
+            <a href="about.html"      class="btn btn-outline">Discover Our School</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ══ STATS ════════════════════════════════════════════════════════ -->
+    <section class="stats-strip" aria-label="School highlights">
+      <div class="container">
+        <div class="stats-strip__inner">
+          <div class="stat-item reveal">
+            <span class="stat-item__num">12+</span>
+            <span class="stat-item__label">Years of Excellence</span>
+          </div>
+          <div class="stat-item reveal reveal-d1">
+            <span class="stat-item__num">600+</span>
+            <span class="stat-item__label">Enrolled Pupils</span>
+          </div>
+          <div class="stat-item reveal reveal-d2">
+            <span class="stat-item__num">98%</span>
+            <span class="stat-item__label">PLE Pass Rate</span>
+          </div>
+          <div class="stat-item reveal reveal-d3">
+            <span class="stat-item__num">42</span>
+            <span class="stat-item__label">Qualified Teachers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ABOUT STRIP ══════════════════════════════════════════════════ -->
+    <section class="about-strip section-pad" aria-label="About Cornerstone Schools">
+      <div class="container">
+        <div class="about-strip__inner">
+          <div class="about-strip__visual reveal">
+            <img
+              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&q=80"
+              alt="Students engaged in learning at Cornerstone Schools"
+              class="about-strip__img"
+              loading="lazy"
+            />
+            <div class="about-strip__block" aria-label="Founded in 2012">
+              <span class="about-strip__block-num">2012</span>
+              <span class="about-strip__block-label">Est. Kampala</span>
+            </div>
+            <div class="about-strip__accent" aria-hidden="true"></div>
+          </div>
+
+          <div class="about-strip__content reveal reveal-d2">
+            <p class="eyebrow">Our Story</p>
+            <div class="ruled-line"></div>
+            <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.15;margin-bottom:1.5rem;">
+              A Foundation Built on <em style="font-style:italic;color:var(--chestnut);">Character</em> and Scholarship
+            </h2>
+            <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.8;margin-bottom:1.5rem;">
+              Cornerstone Schools was founded with a singular conviction: that every child in Uganda deserves a world-class education grounded in values, discipline, and curiosity. From nursery through Primary Seven, we provide a nurturing environment where young minds flourish.
+            </p>
+            <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.8;margin-bottom:2.5rem;">
+              Our approach blends the best of the Ugandan national curriculum with international best practices, producing pupils who are confident, articulate, and prepared for the challenges ahead.
+            </p>
+            <a href="about.html" class="btn btn-navy">Learn More About Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PILLARS ══════════════════════════════════════════════════════ -->
+    <section class="pillars section-pad" aria-label="Our pillars of education">
+      <div class="container">
+        <div class="pillars__intro reveal">
+          <p class="eyebrow eyebrow-gold">What We Stand For</p>
+          <div class="ruled-line-gold"></div>
+          <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:var(--white);line-height:1.2;margin-top:1rem;">
+            Three Pillars of a <em style="font-style:italic;">Cornerstone</em> Education
+          </h2>
+        </div>
+
+        <div class="pillars__grid">
+          <div class="pillar reveal reveal-d1">
+            <div class="pillar__num">01</div>
+            <h3 class="pillar__title">Academic Rigour</h3>
+            <p class="pillar__text">
+              Our curriculum challenges every pupil to think critically, ask bold questions, and master subjects from literacy and numeracy to science, social studies, and the arts — all within the Uganda National Curriculum framework.
+            </p>
+          </div>
+          <div class="pillar reveal reveal-d2">
+            <div class="pillar__num">02</div>
+            <h3 class="pillar__title">Character Formation</h3>
+            <p class="pillar__text">
+              We believe education is incomplete without moral grounding. Integrity, responsibility, empathy, and service to community are woven into every day at Cornerstone — from morning assembly to the final bell.
+            </p>
+          </div>
+          <div class="pillar reveal reveal-d3">
+            <div class="pillar__num">03</div>
+            <h3 class="pillar__title">Holistic Growth</h3>
+            <p class="pillar__text">
+              Sport, music, drama, and co-curricular activities are not extras — they are essential. A child who discovers their passion for football or the choir develops confidence that transforms their academic journey too.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ QUOTE ════════════════════════════════════════════════════════ -->
+    <section class="quote-section section-pad" aria-label="Our guiding philosophy">
+      <div class="container">
+        <div class="reveal">
+          <span class="quote-mark" aria-hidden="true">"</span>
+          <blockquote class="quote-text">
+            The purpose of education is to replace an empty mind with an open one — and at Cornerstone, we ensure every child leaves more curious than when they arrived.
+          </blockquote>
+          <p class="quote-author">— Head Teacher, Cornerstone Nursery &amp; Primary School</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ACADEMICS PREVIEW ════════════════════════════════════════════ -->
+    <section class="section-pad" style="background:var(--white);" aria-label="Academic programmes overview">
+      <div class="container">
+        <div style="text-align:center;max-width:600px;margin:0 auto 5rem;" class="reveal">
+          <p class="eyebrow">Programmes Offered</p>
+          <div class="ruled-line-center"></div>
+          <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.15;margin-top:0.75rem;">
+            From Nursery to Primary Seven
+          </h2>
+          <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.8;margin-top:1rem;">
+            A seamless seven-year journey designed to build confident, capable, compassionate young people.
+          </p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--border);border-radius:2px;overflow:hidden;" class="reveal">
+          <!-- Baby Class / Nursery -->
+          <div style="padding:3rem 2.5rem;border-right:1px solid var(--border);">
+            <div style="font-family:var(--font-display);font-size:3rem;font-weight:300;color:var(--gold);opacity:0.4;line-height:1;margin-bottom:1.25rem;">N</div>
+            <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:500;margin-bottom:0.75rem;">Nursery</h3>
+            <p style="font-size:0.87rem;color:var(--text-secondary);line-height:1.75;margin-bottom:1.5rem;">Baby Class through Top Class. A safe, stimulating environment where play is learning and every discovery is celebrated.</p>
+            <a href="academics.html" style="font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--chestnut);border-bottom:1px solid var(--chestnut);padding-bottom:2px;transition:opacity 0.2s;">Explore ↗</a>
+          </div>
+          <!-- Lower Primary -->
+          <div style="padding:3rem 2.5rem;border-right:1px solid var(--border);background:var(--off-white);">
+            <div style="font-family:var(--font-display);font-size:3rem;font-weight:300;color:var(--gold);opacity:0.4;line-height:1;margin-bottom:1.25rem;">P1–4</div>
+            <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:500;margin-bottom:0.75rem;">Lower Primary</h3>
+            <p style="font-size:0.87rem;color:var(--text-secondary);line-height:1.75;margin-bottom:1.5rem;">Primary One to Four. Building literacy, numeracy, and an inquisitive mindset through structured, engaging teaching.</p>
+            <a href="academics.html" style="font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--chestnut);border-bottom:1px solid var(--chestnut);padding-bottom:2px;transition:opacity 0.2s;">Explore ↗</a>
+          </div>
+          <!-- Upper Primary -->
+          <div style="padding:3rem 2.5rem;">
+            <div style="font-family:var(--font-display);font-size:3rem;font-weight:300;color:var(--gold);opacity:0.4;line-height:1;margin-bottom:1.25rem;">P5–7</div>
+            <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:500;margin-bottom:0.75rem;">Upper Primary</h3>
+            <p style="font-size:0.87rem;color:var(--text-secondary);line-height:1.75;margin-bottom:1.5rem;">Primary Five to Seven. PLE preparation with depth, discipline, and distinction — consistently top results across Kampala.</p>
+            <a href="academics.html" style="font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--chestnut);border-bottom:1px solid var(--chestnut);padding-bottom:2px;transition:opacity 0.2s;">Explore ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA BAND ═════════════════════════════════════════════════════ -->
+    <section class="cta-band section-pad-sm" aria-label="Admissions call to action">
+      <div class="container">
+        <div class="cta-band__inner">
+          <div class="reveal">
+            <h2 class="cta-band__title">Ready to join the<br>Cornerstone family?</h2>
+            <p class="cta-band__sub">Applications open for the 2025 academic year.</p>
+          </div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;" class="reveal reveal-d2">
+            <a href="admissions.html" class="btn btn-navy">Apply Now</a>
+            <a href="contact.html"    class="btn btn-outline">Contact Admissions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ DONATE STRIP ═════════════════════════════════════════════════ -->
+    <section class="section-pad" style="background:var(--navy);" aria-label="Support our school">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;" class="reveal">
+          <div>
+            <p class="eyebrow eyebrow-gold">Give Back</p>
+            <div class="ruled-line-gold"></div>
+            <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--white);line-height:1.2;margin-top:1rem;margin-bottom:1.5rem;">
+              Help a Child <em style="font-style:italic;color:var(--gold-lt);">Reach Their Potential</em>
+            </h2>
+            <p style="font-size:0.92rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:2.5rem;">
+              Your donation directly funds scholarships, library resources, sports equipment, and vital school infrastructure — giving every child the chance to thrive regardless of their family's financial circumstances.
+            </p>
+            <a href="donate.html" class="btn btn-gold">Make a Donation</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(255,255,255,0.1);" class="reveal reveal-d2">
+            <div style="display:flex;gap:1.5rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+              <span style="font-family:var(--font-display);font-size:2.2rem;font-weight:300;color:var(--gold);min-width:110px;">UGX 50k</span>
+              <p style="font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.7;">Provides a pupil with a full set of textbooks for one term</p>
+            </div>
+            <div style="display:flex;gap:1.5rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+              <span style="font-family:var(--font-display);font-size:2.2rem;font-weight:300;color:var(--gold);min-width:110px;">UGX 200k</span>
+              <p style="font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.7;">Covers school fees for one month for a scholarship pupil</p>
+            </div>
+            <div style="display:flex;gap:1.5rem;align-items:flex-start;padding:2rem 0;">
+              <span style="font-family:var(--font-display);font-size:2.2rem;font-weight:300;color:var(--gold);min-width:110px;">UGX 1M</span>
+              <p style="font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.7;">Sponsors a child's full term including uniform and meals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ═══════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-name">Cornerstone Schools</p>
+          <span class="footer__brand-tag">Nursery &amp; Primary — Kampala</span>
+          <p class="footer__brand-body">Providing premium, values-driven education to the children of Uganda since 2012.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigate</p>
+          <ul class="footer__links">
+            <li><a href="index.html"      class="footer__link">Home</a></li>
+            <li><a href="about.html"      class="footer__link">About Us</a></li>
+            <li><a href="academics.html"  class="footer__link">Academics</a></li>
+            <li><a href="admissions.html" class="footer__link">Admissions</a></li>
+            <li><a href="gallery.html"    class="footer__link">Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Information</p>
+          <ul class="footer__links">
+            <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+            <li><a href="donate.html"  class="footer__link">Donate</a></li>
+            <li><a href="#"            class="footer__link">School Calendar</a></li>
+            <li><a href="#"            class="footer__link">Parent Portal</a></li>
+            <li><a href="#"            class="footer__link">News &amp; Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__links">
+            <li class="footer__link">Plot 12, Nakasero Road</li>
+            <li class="footer__link">Kampala, Uganda</li>
+            <li style="margin-top:0.75rem;"><a href="tel:+256700000000" class="footer__link">+256 700 000 000</a></li>
+            <li><a href="mailto:info@cornerstoneschools.ug" class="footer__link">info@cornerstoneschools.ug</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Cornerstone Nursery and Primary School. All rights reserved.</p>
+        <div class="footer__reg">
+          <span class="footer__dot"></span>
+          <span>Registered with the Ministry of Education and Sports, Uganda</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

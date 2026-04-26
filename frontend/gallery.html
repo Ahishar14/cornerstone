@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cornerstone Schools photo gallery — life at our school through the lens of learning, sport, arts, and community." />
+  <title>Gallery | Cornerstone Schools</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Cornerstone Schools — Home">
+        <div class="navbar__logo-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v5c0 5 4 9.5 9 10 5-0.5 9-5 9-10V7L12 2z" fill="white" opacity="0.9"/>
+            <path d="M9 12h6M12 9v6" stroke="#0D1F3C" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">Cornerstone Schools</span>
+          <span class="navbar__logo-tag">Kampala, Uganda</span>
+        </div>
+      </a>
+      <div class="navbar__nav" role="list">
+        <a href="index.html"       class="navbar__link" role="listitem">Home</a>
+        <a href="about.html"       class="navbar__link" role="listitem">About</a>
+        <a href="academics.html"   class="navbar__link" role="listitem">Academics</a>
+        <a href="admissions.html"  class="navbar__link" role="listitem">Admissions</a>
+        <a href="gallery.html"     class="navbar__link" role="listitem">Gallery</a>
+        <a href="contact.html"     class="navbar__link" role="listitem">Contact</a>
+      </div>
+      <a href="donate.html" class="navbar__cta">Donate</a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a href="index.html"      class="mobile-menu__link">Home</a>
+    <a href="about.html"      class="mobile-menu__link">About</a>
+    <a href="academics.html"  class="mobile-menu__link">Academics</a>
+    <a href="admissions.html" class="mobile-menu__link">Admissions</a>
+    <a href="gallery.html"    class="mobile-menu__link">Gallery</a>
+    <a href="contact.html"    class="mobile-menu__link">Contact</a>
+    <a href="donate.html"     class="mobile-menu__cta">Make a Donation</a>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Gallery — life at Cornerstone Schools">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb__sep">/</span>
+          <span>Gallery</span>
+        </nav>
+        <p class="eyebrow page-hero__eyebrow">Life at Cornerstone</p>
+        <h1 class="page-hero__title">
+          School Life Through<br><em style="font-style:italic;color:var(--gold-lt);">Our Lens</em>
+        </h1>
+        <p class="page-hero__sub">
+          A glimpse into the classrooms, playgrounds, performances, and milestones that make Cornerstone a place children love to be.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALLERY GRID -->
+    <section class="section-pad" style="background:var(--white);" aria-label="Photo gallery">
+      <div class="container-wide">
+
+        <!-- Filter tabs -->
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:3rem;" role="group" aria-label="Gallery filter">
+          <button class="gallery-filter active" data-filter="all"
+            style="padding:0.55rem 1.25rem;border:1px solid var(--border);background:var(--navy);color:white;font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all 0.2s;">
+            All
+          </button>
+          <button class="gallery-filter" data-filter="learning"
+            style="padding:0.55rem 1.25rem;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all 0.2s;">
+            Learning
+          </button>
+          <button class="gallery-filter" data-filter="sport"
+            style="padding:0.55rem 1.25rem;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all 0.2s;">
+            Sport
+          </button>
+          <button class="gallery-filter" data-filter="events"
+            style="padding:0.55rem 1.25rem;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all 0.2s;">
+            Events
+          </button>
+          <button class="gallery-filter" data-filter="community"
+            style="padding:0.55rem 1.25rem;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all 0.2s;">
+            Community
+          </button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
+
+          <!-- Row 1: tall left + 2 right -->
+          <div class="gallery-item gallery-item--tall reveal" data-category="learning">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&q=80"
+                 alt="Students reading in the Cornerstone library" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-label">Library &amp; Learning</span>
+            </div>
+          </div>
+          <div class="gallery-item reveal reveal-d1" data-category="sport">
+            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=700&q=80"
+                 alt="Pupils playing football on the school field" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">Football Training</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d2" data-category="learning">
+            <img src="https://images.unsplash.com/photo-1524069290683-0457abfe42c3?w=700&q=80"
+                 alt="Young pupils in a classroom lesson" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">Classroom Life</span></div>
+          </div>
+
+          <!-- Row 2: wide + 1 -->
+          <div class="gallery-item gallery-item--wide reveal" data-category="events">
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=1000&q=80"
+                 alt="Annual Prize Giving Day ceremony" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">Prize Giving Day</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d1" data-category="community">
+            <img src="https://images.unsplash.com/photo-1560523159-4a9692d222ef?w=700&q=80"
+                 alt="Teachers and pupils at community event" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">Community Day</span></div>
+          </div>
+
+          <!-- Row 3: 3 equal -->
+          <div class="gallery-item reveal" data-category="learning">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=80"
+                 alt="Science lesson in upper primary" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">Science &amp; Discovery</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d1" data-category="events">
+            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=700&q=80"
+                 alt="Cultural Day performance by nursery pupils" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">Cultural Day</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d2" data-category="sport">
+            <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?w=700&q=80"
+                 alt="Netball team in inter-school competition" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">Netball Team</span></div>
+          </div>
+
+          <!-- Row 4: 1 + wide -->
+          <div class="gallery-item reveal" data-category="community">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80"
+                 alt="Parent-teacher meeting day" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">Parents' Day</span></div>
+          </div>
+          <div class="gallery-item gallery-item--wide reveal reveal-d2" data-category="events">
+            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1000&q=80"
+                 alt="School choir performing at end-of-year concert" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">End of Year Concert</span></div>
+          </div>
+
+          <!-- Row 5: 3 equal -->
+          <div class="gallery-item reveal" data-category="learning">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=700&q=80"
+                 alt="Art class with painted work on display" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">Creative Arts</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d1" data-category="community">
+            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=700&q=80"
+                 alt="Graduation ceremony for Top Class leavers" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">Nursery Graduation</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d2" data-category="sport">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80"
+                 alt="Athletics day on the school track" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-label">Sports Day</span></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-name">Cornerstone Schools</p>
+          <span class="footer__brand-tag">Nursery &amp; Primary — Kampala</span>
+          <p class="footer__brand-body">Providing premium, values-driven education to the children of Uganda since 2012.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigate</p>
+          <ul class="footer__links">
+            <li><a href="index.html"      class="footer__link">Home</a></li>
+            <li><a href="about.html"      class="footer__link">About Us</a></li>
+            <li><a href="academics.html"  class="footer__link">Academics</a></li>
+            <li><a href="admissions.html" class="footer__link">Admissions</a></li>
+            <li><a href="gallery.html"    class="footer__link">Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Information</p>
+          <ul class="footer__links">
+            <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+            <li><a href="donate.html"  class="footer__link">Donate</a></li>
+            <li><a href="#"            class="footer__link">School Calendar</a></li>
+            <li><a href="#"            class="footer__link">Parent Portal</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__links">
+            <li class="footer__link">Plot 12, Nakasero Road</li>
+            <li class="footer__link">Kampala, Uganda</li>
+            <li style="margin-top:0.75rem;"><a href="tel:+256700000000" class="footer__link">+256 700 000 000</a></li>
+            <li><a href="mailto:info@cornerstoneschools.ug" class="footer__link">info@cornerstoneschools.ug</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Cornerstone Nursery and Primary School. All rights reserved.</p>
+        <div class="footer__reg"><span class="footer__dot"></span><span>Registered with the Ministry of Education and Sports, Uganda</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Gallery filter logic
+    const filterBtns = document.querySelectorAll('.gallery-filter');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.style.background = 'transparent';
+          b.style.color = 'var(--text-secondary)';
+          b.style.borderColor = 'var(--border)';
+          b.classList.remove('active');
+        });
+        btn.style.background = 'var(--navy)';
+        btn.style.color = 'white';
+        btn.style.borderColor = 'var(--navy)';
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        galleryItems.forEach(item => {
+          const show = filter === 'all' || item.dataset.category === filter;
+          item.style.opacity = show ? '1' : '0.15';
+          item.style.pointerEvents = show ? 'auto' : 'none';
+          item.style.transition = 'opacity 0.3s ease';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

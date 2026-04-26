@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cornerstone Schools academics — Nursery, Lower Primary, and Upper Primary programmes, curriculum, and co-curricular activities." />
+  <title>Academics | Cornerstone Schools</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Cornerstone Schools — Home">
+        <div class="navbar__logo-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v5c0 5 4 9.5 9 10 5-0.5 9-5 9-10V7L12 2z" fill="white" opacity="0.9"/>
+            <path d="M9 12h6M12 9v6" stroke="#0D1F3C" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">Cornerstone Schools</span>
+          <span class="navbar__logo-tag">Kampala, Uganda</span>
+        </div>
+      </a>
+      <div class="navbar__nav" role="list">
+        <a href="index.html"       class="navbar__link" role="listitem">Home</a>
+        <a href="about.html"       class="navbar__link" role="listitem">About</a>
+        <a href="academics.html"   class="navbar__link" role="listitem">Academics</a>
+        <a href="admissions.html"  class="navbar__link" role="listitem">Admissions</a>
+        <a href="gallery.html"     class="navbar__link" role="listitem">Gallery</a>
+        <a href="contact.html"     class="navbar__link" role="listitem">Contact</a>
+      </div>
+      <a href="donate.html" class="navbar__cta">Donate</a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a href="index.html"      class="mobile-menu__link">Home</a>
+    <a href="about.html"      class="mobile-menu__link">About</a>
+    <a href="academics.html"  class="mobile-menu__link">Academics</a>
+    <a href="admissions.html" class="mobile-menu__link">Admissions</a>
+    <a href="gallery.html"    class="mobile-menu__link">Gallery</a>
+    <a href="contact.html"    class="mobile-menu__link">Contact</a>
+    <a href="donate.html"     class="mobile-menu__cta">Make a Donation</a>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Academics at Cornerstone Schools">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current">Academics</span>
+        </nav>
+        <p class="eyebrow page-hero__eyebrow">Our Programmes</p>
+        <h1 class="page-hero__title">
+          Rigorous Learning.<br><em style="font-style:italic;color:var(--gold-lt);">Inspired Teaching.</em>
+        </h1>
+        <p class="page-hero__sub">
+          From a child's first day in Baby Class to their final PLE examinations, every stage of a Cornerstone education is deliberately designed for depth, joy, and excellence.
+        </p>
+      </div>
+    </section>
+
+    <!-- CURRICULUM INTRO -->
+    <section class="section-pad" style="background:var(--white);" aria-label="Curriculum overview">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;" class="reveal">
+          <div>
+            <p class="eyebrow">Curriculum Framework</p>
+            <div class="ruled-line"></div>
+            <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.2;margin-bottom:1.5rem;">
+              Built on the Uganda National Curriculum
+            </h2>
+            <p style="font-size:0.92rem;color:var(--text-secondary);line-height:1.8;margin-bottom:1rem;">
+              We follow the Uganda National Curriculum as prescribed by the National Curriculum Development Centre (NCDC), enriched with additional resources, teaching methodologies, and co-curricular activities drawn from international best practice.
+            </p>
+            <p style="font-size:0.92rem;color:var(--text-secondary);line-height:1.8;">
+              Our class sizes are deliberately kept small — a maximum of 35 pupils per class — so that every child receives genuine attention, timely feedback, and the personalised support they need to excel.
+            </p>
+          </div>
+          <div style="background:var(--off-white);padding:3rem;border-radius:2px;">
+            <p style="font-family:var(--font-display);font-size:1.4rem;font-weight:400;margin-bottom:2rem;color:var(--navy);">At a Glance</p>
+            <div style="display:flex;flex-direction:column;gap:1.25rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:1.25rem;border-bottom:1px solid var(--border);">
+                <span style="font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-secondary);">Curriculum</span>
+                <span style="font-size:0.9rem;font-weight:500;color:var(--navy);">Uganda NCDC</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:1.25rem;border-bottom:1px solid var(--border);">
+                <span style="font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-secondary);">Language</span>
+                <span style="font-size:0.9rem;font-weight:500;color:var(--navy);">English Medium</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:1.25rem;border-bottom:1px solid var(--border);">
+                <span style="font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-secondary);">Class Size</span>
+                <span style="font-size:0.9rem;font-weight:500;color:var(--navy);">Max. 35 Pupils</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:1.25rem;border-bottom:1px solid var(--border);">
+                <span style="font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-secondary);">Assessment</span>
+                <span style="font-size:0.9rem;font-weight:500;color:var(--navy);">Continuous + Terminal</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-secondary);">PLE Sitting</span>
+                <span style="font-size:0.9rem;font-weight:500;color:var(--navy);">Primary Seven (UNEB)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NURSERY LEVEL -->
+    <div class="level-block" aria-label="Nursery programme">
+      <div class="container">
+        <div class="level-block__inner">
+          <div class="reveal">
+            <img
+              src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&q=80"
+              alt="Young children in Nursery class at Cornerstone"
+              class="level-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="level-block__content reveal reveal-d2">
+            <p class="eyebrow">Ages 3–5</p>
+            <div class="ruled-line"></div>
+            <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.15;margin-bottom:1rem;">
+              Nursery Section
+            </h2>
+            <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--chestnut);margin-bottom:1.25rem;">Baby Class · Middle Class · Top Class</p>
+            <p class="level-body">
+              Our Nursery section is where the adventure begins. Qualified early-years educators guide children through structured play, story time, number work, and creative activities in a warm, secure environment that feels just like home.
+            </p>
+            <p class="level-body" style="margin-top:0.75rem;">
+              We follow an integrated early-childhood curriculum that develops language, numeracy, fine motor skills, social awareness, and emotional intelligence — laying a rock-solid foundation for primary school.
+            </p>
+            <div class="tags">
+              <span class="tag">Phonics &amp; Literacy</span>
+              <span class="tag">Number Work</span>
+              <span class="tag">Creative Arts</span>
+              <span class="tag">Outdoor Play</span>
+              <span class="tag">Music &amp; Movement</span>
+              <span class="tag">Social Skills</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOWER PRIMARY -->
+    <div class="level-block alt" aria-label="Lower Primary programme">
+      <div class="container">
+        <div class="level-block__inner">
+          <div class="reveal">
+            <img
+              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&q=80"
+              alt="Lower Primary pupils engaged in group learning"
+              class="level-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="level-block__content reveal reveal-d2">
+            <p class="eyebrow">Ages 6–9</p>
+            <div class="ruled-line"></div>
+            <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.15;margin-bottom:1rem;">
+              Lower Primary
+            </h2>
+            <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--chestnut);margin-bottom:1.25rem;">Primary One · Primary Two · Primary Three · Primary Four</p>
+            <p class="level-body">
+              The lower primary years are critical for building the academic habits that determine long-term success. Our teachers use active, engaging methodologies to ensure children truly understand — not just memorise — what they are learning.
+            </p>
+            <p class="level-body" style="margin-top:0.75rem;">
+              Reading programmes, mathematics mastery, and regular project-based learning develop independence and curiosity across every subject.
+            </p>
+            <div class="tags">
+              <span class="tag">English Language</span>
+              <span class="tag">Mathematics</span>
+              <span class="tag">Luganda</span>
+              <span class="tag">Science &amp; Technology</span>
+              <span class="tag">Social Studies</span>
+              <span class="tag">Religious Education</span>
+              <span class="tag">Creative Arts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UPPER PRIMARY -->
+    <div class="level-block" aria-label="Upper Primary programme">
+      <div class="container">
+        <div class="level-block__inner">
+          <div class="reveal">
+            <img
+              src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&q=80"
+              alt="Upper Primary students in examination preparation"
+              class="level-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="level-block__content reveal reveal-d2">
+            <p class="eyebrow">Ages 10–13</p>
+            <div class="ruled-line"></div>
+            <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.15;margin-bottom:1rem;">
+              Upper Primary
+            </h2>
+            <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--chestnut);margin-bottom:1.25rem;">Primary Five · Primary Six · Primary Seven</p>
+            <p class="level-body">
+              Upper Primary at Cornerstone is where years of careful preparation bear fruit. With disciplined PLE readiness from P5, our pupils approach their UNEB examinations not with fear, but with calm confidence rooted in deep understanding.
+            </p>
+            <p class="level-body" style="margin-top:0.75rem;">
+              Our P7 results consistently place us among the highest-performing schools in Kampala, with graduates regularly gaining entry to the most sought-after secondary schools in Uganda.
+            </p>
+            <div class="tags">
+              <span class="tag">English</span>
+              <span class="tag">Mathematics</span>
+              <span class="tag">Science</span>
+              <span class="tag">Social Studies</span>
+              <span class="tag">Luganda / Local Language</span>
+              <span class="tag">Religious Education</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CO-CURRICULAR -->
+    <section class="section-pad bg-navy" aria-label="Co-curricular activities">
+      <div class="container">
+        <div style="max-width:600px;margin-bottom:4rem;" class="reveal">
+          <p class="eyebrow eyebrow-gold">Beyond the Classroom</p>
+          <div class="ruled-line-gold"></div>
+          <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--white);line-height:1.2;margin-top:0.75rem;">
+            A Child is More Than Their Grades
+          </h2>
+          <p style="font-size:0.92rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-top:1rem;">
+            Our co-curricular programme is as carefully designed as our academics — because sport, art, drama, and service develop the whole person.
+          </p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,0.1);" class="reveal">
+          <div style="padding:2.5rem;border-right:1px solid rgba(255,255,255,0.08);">
+            <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Sport</p>
+            <p style="font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.75;">Football, netball, athletics, swimming, and volleyball. Inter-school competitions build sportsmanship and teamwork alongside physical fitness.</p>
+          </div>
+          <div style="padding:2.5rem;border-right:1px solid rgba(255,255,255,0.08);">
+            <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Arts &amp; Culture</p>
+            <p style="font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.75;">School choir, drama club, traditional dance, and visual arts. Annual Cultural Day celebrates Uganda's rich heritage through performance and creativity.</p>
+          </div>
+          <div style="padding:2.5rem;">
+            <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Leadership &amp; Service</p>
+            <p style="font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.75;">Prefect programme, peer mentorship, and community service projects. Pupils learn early that leadership is service — and that they have the power to make a difference.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band section-pad-sm" aria-label="Admissions CTA">
+      <div class="container">
+        <div class="cta-band__inner">
+          <div class="reveal">
+            <h2 class="cta-band__title">Give Your Child the Cornerstone Advantage</h2>
+            <p class="cta-band__sub">Applications are open for the 2025 academic year.</p>
+          </div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;" class="reveal reveal-d2">
+            <a href="admissions.html" class="btn btn-navy">Apply Now</a>
+            <a href="contact.html"    class="btn btn-outline">Speak to Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-name">Cornerstone Schools</p>
+          <span class="footer__brand-tag">Nursery &amp; Primary — Kampala</span>
+          <p class="footer__brand-body">Providing premium, values-driven education to the children of Uganda since 2012.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigate</p>
+          <ul class="footer__links">
+            <li><a href="index.html"      class="footer__link">Home</a></li>
+            <li><a href="about.html"      class="footer__link">About Us</a></li>
+            <li><a href="academics.html"  class="footer__link">Academics</a></li>
+            <li><a href="admissions.html" class="footer__link">Admissions</a></li>
+            <li><a href="gallery.html"    class="footer__link">Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Information</p>
+          <ul class="footer__links">
+            <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+            <li><a href="donate.html"  class="footer__link">Donate</a></li>
+            <li><a href="#"            class="footer__link">School Calendar</a></li>
+            <li><a href="#"            class="footer__link">Parent Portal</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__links">
+            <li class="footer__link">Plot 12, Nakasero Road</li>
+            <li class="footer__link">Kampala, Uganda</li>
+            <li style="margin-top:0.75rem;"><a href="tel:+256700000000" class="footer__link">+256 700 000 000</a></li>
+            <li><a href="mailto:info@cornerstoneschools.ug" class="footer__link">info@cornerstoneschools.ug</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Cornerstone Nursery and Primary School. All rights reserved.</p>
+        <div class="footer__reg"><span class="footer__dot"></span><span>Registered with the Ministry of Education and Sports, Uganda</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
