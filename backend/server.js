@@ -20,6 +20,22 @@ require('./db');
 // const app  = express();
 const PORT = process.env.PORT || 5000;
 
+const path = require('path'); // Add this at the very top with other requires
+
+// ... existing middleware like app.use(cors()) ...
+
+// ADD THIS: Point Express to your frontend folder
+// This tells the server where your HTML/CSS/JS files live
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// ... your existing routes like app.use('/api/portal', portalRoutes) ...
+
+// ADD THIS AT THE END (But before app.listen):
+// This ensures that if the user refreshes the page, they don't get a 404
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
+
 // ── Trust proxy (required when behind Nginx/reverse proxy) ────
 app.set('trust proxy', 1);
 

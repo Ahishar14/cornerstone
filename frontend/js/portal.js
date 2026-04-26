@@ -13,7 +13,7 @@ const loginError = document.getElementById('p-login-error');
 
 /* ── Auth ────────────────────────────────────────────────────── */
 async function portalLogin(email, password) {
-  const res  = await fetch('http://localhost:5000/api/portal/login', {
+  const res  = await fetch('/api/portal/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
