@@ -4,8 +4,21 @@ const path     = require('path');
 const fs       = require('fs');
 const logger   = require('./middleware/logger');
 
-const dbPath = process.env.DB_PATH || path.join(__dirname, '..', 'data', 'cornerstone.db');
+// const dbPath = process.env.DB_PATH || path.join(__dirname, '..', 'data', 'cornerstone.db');
+// const dataDir = path.dirname(dbPath);
+// if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+
+// const db = new Database(dbPath);
+
+// ── SMART PATH LOGIC ──────────────────────────────────────────
+// This ensures scripts/seed.js and server.js both use the same folder
+const baseDir = __dirname.includes('scripts') 
+    ? path.join(__dirname, '..') 
+    : __dirname;
+
+const dbPath = process.env.DB_PATH || path.join(baseDir, 'data', 'cornerstone.db');
 const dataDir = path.dirname(dbPath);
+
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
 const db = new Database(dbPath);
