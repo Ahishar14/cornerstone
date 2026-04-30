@@ -59,7 +59,7 @@ async function sendContactConfirmation({ name, email, subject, message }) {
           <p style="line-height:1.8;">Warm regards,<br><strong>The Cornerstone Schools Team</strong></p>
         </div>
         <div style="background:#0D1F3C;padding:1.5rem 2.5rem;">
-          <p style="color:rgba(255,255,255,0.4);font-size:0.75rem;margin:0;">Plot 12, Nakasero Road, Kampala &nbsp;·&nbsp; +256 700 000 000 &nbsp;·&nbsp; info@cornerstoneschools.ug</p>
+          <p style="color:rgba(255,255,255,0.4);font-size:0.75rem;margin:0;">Behind Stabex Budaka, Budaka &nbsp;·&nbsp; +256 700 000 000 &nbsp;·&nbsp; info@cornerstoneschools.ug</p>
         </div>
       </div>`,
     text: `Dear ${name},\n\nThank you for your message. We will respond within 1-2 business days.\n\nCornerstone Schools`,
@@ -142,7 +142,7 @@ async function sendDonationReceipt({ first_name, email, amount, currency, design
         </div>
         <div style="padding:2.5rem;background:#f8f5f0;">
           <p style="font-size:1.3rem;margin-bottom:1rem;">Dear ${first_name},</p>
-          <p style="line-height:1.8;margin-bottom:1.5rem;">Thank you sincerely for your generous donation to Cornerstone Schools. Your contribution makes a real difference to the lives of children in Kampala.</p>
+          <p style="line-height:1.8;margin-bottom:1.5rem;">Thank you sincerely for your generous donation to Cornerstone Schools. Your contribution makes a real difference to the lives of children in Budaka.</p>
           <table style="width:100%;border-collapse:collapse;margin-bottom:2rem;">
             <tr style="border-bottom:1px solid #ddd;"><td style="padding:0.75rem 0;color:#4A5568;font-size:0.85rem;">Reference</td><td style="padding:0.75rem 0;font-weight:600;text-align:right;">${tx_ref}</td></tr>
             <tr style="border-bottom:1px solid #ddd;"><td style="padding:0.75rem 0;color:#4A5568;font-size:0.85rem;">Amount</td><td style="padding:0.75rem 0;font-weight:600;text-align:right;">${currency} ${formatted}</td></tr>
@@ -152,7 +152,7 @@ async function sendDonationReceipt({ first_name, email, amount, currency, design
           <br/><p>With deep gratitude,<br><strong>Cornerstone Schools</strong></p>
         </div>
         <div style="background:#0D1F3C;padding:1.5rem 2.5rem;">
-          <p style="color:rgba(255,255,255,0.4);font-size:0.75rem;margin:0;">Plot 12, Nakasero Road, Kampala · finance@cornerstoneschools.ug</p>
+          <p style="color:rgba(255,255,255,0.4);font-size:0.75rem;margin:0;">Behind Stabex Budaka, Budaka · finance@cornerstoneschools.ug</p>
         </div>
       </div>`,
     text: `Dear ${first_name},\n\nThank you for your donation of ${currency} ${formatted} to Cornerstone Schools.\nReference: ${tx_ref}\nDesignated towards: ${designationLabel}\n\nWith gratitude,\nCornerstone Schools`,
