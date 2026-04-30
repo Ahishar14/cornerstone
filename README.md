@@ -1,6 +1,6 @@
 # Cornerstone Nursery and Primary School — Website
 
-A premium, full-stack school website for **Cornerstone Nursery and Primary School**, Kampala, Uganda.
+A premium, full-stack school website for **Cornerstone Nursery and Primary School**, Budaka, Uganda.
 
 ---
 

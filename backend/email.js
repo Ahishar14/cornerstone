@@ -50,7 +50,7 @@ async function sendContactConfirmation({ name, email, subject, message }) {
       <div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;color:#0D1F3C;">
         <div style="background:#0D1F3C;padding:2rem 2.5rem;">
           <p style="color:white;font-size:1.2rem;margin:0;font-family:Georgia,serif;">Cornerstone Schools</p>
-          <p style="color:rgba(255,255,255,0.5);font-size:0.75rem;margin:0.2rem 0 0;letter-spacing:0.12em;text-transform:uppercase;">Kampala, Uganda</p>
+          <p style="color:rgba(255,255,255,0.5);font-size:0.75rem;margin:0.2rem 0 0;letter-spacing:0.12em;text-transform:uppercase;">Budaka, Uganda</p>
         </div>
         <div style="padding:2.5rem;background:#f8f5f0;">
           <p style="font-size:1.4rem;font-weight:400;margin-bottom:1rem;">Dear ${name},</p>
@@ -85,7 +85,7 @@ async function sendAdmissionsConfirmation(data) {
       <div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;color:#0D1F3C;">
         <div style="background:#0D1F3C;padding:2rem 2.5rem;">
           <p style="color:white;font-size:1.2rem;margin:0;">Cornerstone Schools</p>
-          <p style="color:rgba(255,255,255,0.5);font-size:0.75rem;margin:0.2rem 0 0;letter-spacing:0.12em;text-transform:uppercase;">Kampala, Uganda</p>
+          <p style="color:rgba(255,255,255,0.5);font-size:0.75rem;margin:0.2rem 0 0;letter-spacing:0.12em;text-transform:uppercase;">Budaka, Uganda</p>
         </div>
         <div style="padding:2.5rem;background:#f8f5f0;">
           <p style="font-size:1.3rem;margin-bottom:1rem;">Dear ${parent_first_name},</p>
